@@ -1,5 +1,5 @@
 import React from "react";
-import faker from "faker";
+import CommentDetail from "./CommentDetail.js";
 import "./app.css";
 
 class App extends React.Component {
@@ -11,20 +11,21 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="ui container comments">
-          <div className="comment">
-            <a className="avatar" href="/">
-              <img alt="avatar" src={faker.image.avatar} />
-            </a>
-            <div className="content">
-              <a className="author" href="/">
-                Sam
-              </a>
-              <div className="metadata">
-                <span className="date">Today at 6:00PM</span>
-              </div>
-            </div>
-            <div className="text">Nice blog post!</div>
-          </div>
+          <CommentDetail
+            name="Sammyn"
+            timeAgo="Today 16:05"
+            comment={this.comment}
+          />
+          <CommentDetail
+            name="Christine"
+            timeAgo="Today 17:53"
+            comment={this.comment}
+          />
+          <CommentDetail
+            name="Elaine"
+            timeAgo="Yesterday 21:15"
+            comment={this.comment}
+          />
         </div>
       </div>
     );

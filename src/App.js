@@ -2,16 +2,22 @@ import React from "react";
 import faker from "faker";
 import CommentDetail from "./components/CommentDetail.js";
 import ApprovalCard from "./components/ApprovalCard.js";
-import "./app.css";
+import SeasonDisplay from "./components/SeasonDisplay.js";
+import "./styles/app.css";
 
 class App extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
+  constructor(props) {
+    super(props);
+  }
 
   render() {
+    window.navigator.geolocation.getCurrentPosition(
+      (position) => console.log(position),
+      (err) => console.log(err)
+    );
     return (
       <div className="App">
+        <SeasonDisplay />
         <div className="ui container comments">
           <ApprovalCard>
             <CommentDetail

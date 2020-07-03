@@ -3,6 +3,7 @@ import faker from "faker";
 import CommentDetail from "./components/CommentDetail.js";
 import ApprovalCard from "./components/ApprovalCard.js";
 import SeasonDisplay from "./components/SeasonDisplay.js";
+import Loader from "./components/Loader";
 import "./styles/app.css";
 
 class App extends React.Component {
@@ -14,7 +15,8 @@ class App extends React.Component {
     );
   }
 
-  render() {
+  //helper method
+  renderContent() {
     if (this.state.errorMsg && !this.state.lat) {
       return <p>Error: {this.state.errorMsg}</p>;
     }
@@ -22,8 +24,12 @@ class App extends React.Component {
       return <SeasonDisplay lat={this.state.lat} />;
     }
 
-    return <div>Loading!</div>;
-    // return (
+    return <Loader />;
+  }
+
+  render() {
+    return <div className="borderWhite">{this.renderContent()}</div>;
+
     //   <div className="App">
     //     {/* <SeasonDisplay lat={lat} /> */}
 

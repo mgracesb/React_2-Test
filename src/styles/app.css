@@ -1,25 +1,47 @@
-.App {
-  padding: 5%;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  padding: 0 10%;
+  height: 100vh;
+  width: 100%;
+}
+
+.header {
+  width: 100%;
 }
 
 .icon-left {
   position: absolute;
   top: 2%;
-  left: 10px;
+  left: 10%;
 }
 
 .icon-right {
   position: absolute;
   bottom: 81%;
-  right: 10px;
+  right: 10%;
 }
 
 .season-display.winter i {
   color: #90ffb9;
 }
+.season-display.winter i:hover {
+  -webkit-animation: text-blur-out 1.2s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    both;
+  animation: text-blur-out 1.2s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
 
 .season-display.summer i {
   color: rgb(255, 211, 89);
+}
+.season-display.summer i:hover {
+  -webkit-animation: text-blur-out 1.2s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    both;
+  animation: text-blur-out 1.2s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
 .season-display {
@@ -37,6 +59,51 @@
   background-image: radial-gradient(#f9d423 0%, #f83600 100%);
 }
 
-.borderWhite {
-  border: 10px solid rgb(238, 238, 238);
+.App {
+  border: 10px solid transparent;
+  border-image: linear-gradient(
+    to bottom right,
+    #b827fc 0%,
+    #2c90fc 25%,
+    #b8fd33 50%,
+    #fec837 75%,
+    #fd1892 100%
+  );
+  border-image-slice: 1;
+  padding: 5% 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+.post {
+  margin-bottom: 5%;
+}
+
+.ui.container.comments.box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2%;
+}
+
+/*-------------- Animations -------------*/
+
+@-webkit-keyframes text-blur-out {
+  0% {
+    -webkit-filter: blur(0.01);
+    filter: blur(0.01);
+  }
+  100% {
+    -webkit-filter: blur(12px) opacity(0%);
+    filter: blur(12px) opacity(0%);
+  }
+}
+@keyframes text-blur-out {
+  0% {
+    -webkit-filter: blur(0.01);
+    filter: blur(0.01);
+  }
+  100% {
+    -webkit-filter: blur(12px) opacity(0%);
+    filter: blur(12px) opacity(0%);
+  }
 }

@@ -28,39 +28,39 @@ class App extends React.Component {
   }
 
   render() {
-    return <div className="borderWhite">{this.renderContent()}</div>;
-
-    //   <div className="App">
-    //     {/* <SeasonDisplay lat={lat} /> */}
-
-    //     <div className="ui container comments">
-    //       <ApprovalCard>
-    //         <CommentDetail
-    //           name="Sammyn"
-    //           timeAgo="Today 16:05"
-    //           comment="I like the subject"
-    //           avatar={faker.image.avatar()}
-    //         />
-    //       </ApprovalCard>
-    //       <ApprovalCard>
-    //         <CommentDetail
-    //           name="Christine"
-    //           timeAgo="Today 17:53"
-    //           comment="The content is amazing"
-    //           avatar={faker.image.avatar()}
-    //         />
-    //       </ApprovalCard>
-    //       <ApprovalCard>
-    //         <CommentDetail
-    //           name="Elaine"
-    //           timeAgo="Yesterday 21:15"
-    //           comment="Nice blog post"
-    //           avatar={faker.image.avatar()}
-    //         />
-    //       </ApprovalCard>
-    //     </div>
-    //   </div>
-    // );
+    return (
+      <div className="borderWhite">
+        {this.renderContent()}
+        <div className="App">
+          <div className="ui container comments">
+            <ApprovalCard>
+              <CommentDetail
+                name="Sammyn"
+                timeAgo="Today 16:05"
+                comment="I like the subject"
+                avatar={faker.image.avatar()}
+              />
+            </ApprovalCard>
+            <ApprovalCard>
+              <CommentDetail
+                name="Christine"
+                timeAgo="Today 17:53"
+                comment="The content is amazing"
+                avatar={faker.image.avatar()}
+              />
+            </ApprovalCard>
+            <ApprovalCard>
+              <CommentDetail
+                name="Elaine"
+                timeAgo="Yesterday 21:15"
+                comment="Nice blog post"
+                avatar={faker.image.avatar()}
+              />
+            </ApprovalCard>
+          </div>
+        </div>
+      </div>
+    );
   }
 }
 
